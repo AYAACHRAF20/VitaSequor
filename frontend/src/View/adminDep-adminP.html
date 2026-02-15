@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admins de Département</title>
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <aside class="sidebar">
+            <h2 class="sidebar-logo">VitaSequor</h2>
+            <ul class="sidebar-menu">
+                <li><a href="../View/superAdminHome.html">Dashboard</a></li>
+                <li><a href="../View/adminDep-adminP.html">Gestion des admins</a></li>
+                <li><a href="../View/departements-adminP.html">Gestion des departements</a></li>
+                <li><a href="../View/finances-adminP.html">Gestion des finances</a></li>
+                <li><a id="logoutBtn" style="color:var(--danger)">Déconnexion</a></li>
+            </ul>
+        </aside>
+
+    <main>
+        <header class="topbar">
+            <h2>Gestion des Admins de Département</h2>
+        </header>
+
+        <section class="general-section">
+            <div class="buttons">
+                <button id="ajouterAdmin" class="btn btn-primary">+ Ajouter un admin</button>
+                <button id="refreshAdmin" class="btn btn-secondary">Rafraîchir</button>
+            </div>
+
+            <table class="adminTable">
+                <thead>
+                    <tr>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Département</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="adminList"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../Controller/common.js"></script>
+    <script src="../Controller/adminDep-adminP.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VitaSequor - Page d'admin principal</title>
+        <link rel="stylesheet" href="../css/pages.css">
+    </head>
+    <body>
+
+        
+        <aside class="sidebar">
+            <h2 class="sidebar-logo">VitaSequor</h2>
+            <ul class="sidebar-menu">
+                <li><a href="../View/superAdminHome.html">Dashboard</a></li>
+                <li><a href="../View/adminDep-adminP.html">Gestion des admins</a></li>
+                <li><a href="../View/departements-adminP.html">Gestion des departements</a></li>
+                <li><a href="../View/finances-adminP.html">Gestion des finances</a></li>
+                <li><a href="#" id="logoutBtn" style="color:var(--danger)">Déconnexion</a></li>
+            </ul>
+        </aside>
+
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1 id="welcome_message"></h1>
+                <span id="date" class="topbar-date"></span>
+            </header>
+            <section class="dashboard-cards">
+                <div class="card">
+                    <h3>Total des patients de la clinique</h3>
+                    <h1 id="totalPC">0</h1>
+                </div>
+                <div class="card">
+                    <h3>Total de médecins</h3>
+                    <h1 id="totalDC">0</h1>
+                </div>
+                <div class="card">
+                    <h3>Nombre de secrétaires</h3>
+                    <h1 id="totalSC">0</h1>
+                </div>
+                <div class="card">
+                    <h3>Revenus ce mois</h3>
+                    <h1 id="revenus">0</h1>
+                </div>
+            </section>
+        </main>
+        <script src="../Controller/common.js"></script>
+        <script src="../Controller/superAdminHome.js"></script>
+    </body>
+</html>

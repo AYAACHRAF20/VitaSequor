@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page des departements</title>
+        <link rel="stylesheet" href="../css/pages.css">
+    </head>
+    <body>
+        <aside class="sidebar">
+            <h2 class="sidebar-logo">VitaSequor</h2>
+            <ul class="sidebar-menu">
+                <li><a href="../View/superAdminHome.html">Dashboard</a></li>
+                <li><a href="../View/adminDep-adminP.html">Gestion des admins</a></li>
+                <li><a href="../View/departements-adminP.html">Gestion des departements</a></li>
+                <li><a href="../View/finances-adminP.html">Gestion des finances</a></li>
+                <li><a href="#" id="logoutBtn" style="color:var(--danger)">Déconnexion</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Gestion des départements et spécialités</h2>
+            </header>
+
+            <section class="general-section">
+                <div class="buttons">
+                    <button id="ajouterDepart" class="btn btn-primary">+Ajouter un département</button>
+                    <button id="resetDepartList" class="btn btn-secondary">Rafraichir</button>
+                </div>
+
+                <table class="departTable">
+                    <thead>
+                        <tr>
+                            <th>Nom du département</th>
+                            <th>Admin</th>
+                            <th>Nombre de spécialités</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="departList"></tbody>
+                </table>
+            </section>
+
+            <section class="general-section">
+                <div class="buttons">
+                    <button class="btn btn-primary" id="ajouterSpecialite">+Ajouter une spécialité</button>
+                    <button class="btn btn-secondary" id="resetSpecList">Rafraichir</button>
+                </div>
+
+                <table border="1" class="specTable">
+                    <thead>
+                        <tr>
+                            <th>Nom de spécialité</th>
+                            <th>Département</th>
+                            <th>Nombre de Médecins</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="specList"></tbody>
+                </table>
+            </section>
+        </main>
+        <script src="../Controller/common.js"></script>
+        <script src="../Controller/departements-adminP.js"></script>
+    </body>
+</html>

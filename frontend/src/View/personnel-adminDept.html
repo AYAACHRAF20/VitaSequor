@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page de gestion du personnel du département</title>
+        <link rel="stylesheet" href="../css/pages.css">
+    </head>
+    <body>
+        <aside class="sidebar">
+            <h2 class="sidebar-logo">VitaSequor</h2>
+            <ul class="sidebar-menu">
+                <li><a href="../View/adminDeptHome.html">Dashboard</a></li>
+                <li><a href="../View/personnel-adminDept.html">Gestion des médecins et secrétaires</a></li>
+                <li><a href="../View/patients-adminDept.html">Gestion des patients</a></li>
+                <li><a href="../View/factures-adminDept.html">Factures</a></li>
+                <li><a href="#" id="logoutBtn" style="color:var(--danger)">Déconnexion</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Gestion des médecins et secrétaires du département</h2>
+            </header>
+
+            <section class="general-section">
+                <div class="buttons">
+                    <button id="ajouterMedecin" class="btn btn-primary">+Ajouter un médecin</button>
+                    <button id="resetDocList" class="btn btn-secondary">Rafraichir</button>
+                </div>
+
+                <table class="docTable">
+                    <thead>
+                        <tr>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>Spécialité</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="docList"></tbody>
+                </table>
+            </section>
+
+            <section class="general-section">
+                <div class="buttons">
+                    <button id="ajouterSecretaire" class="btn btn-primary">+Ajouter une secrétaire</button>
+                    <button id="resetSecretaryList" class="btn btn-secondary">Rafraichir</button>
+                </div>
+
+                <table class="secretaryTable" border="1">
+                    <thead>
+                        <tr>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="secretaryList"></tbody>
+                </table>
+            </section>
+        </main>
+
+        <script src="../Controller/common.js"></script>
+        <script src="../Controller/personnel-adminDept.js"></script>
+    </body>
+</html>

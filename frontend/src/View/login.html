@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VitaSequor - Connexion</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body class="login-body">
+        <header>
+            <nav class="navbar">
+                <div class="logo">VitaSequor</div>
+                <ul class="navbar-links">
+                    <li><a href="../View/index.html">Accueil</a></li>
+                    <li><a href="#about">A propos</a></li>
+                    <li><a href="#services">Fonctionnalités</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        
+        <main class="login-main">
+            <form class="login-form">
+                <h2>Connexion</h2>
+                
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="pass" placeholder="Mot de passe" required>
+                    <span id="display" class="toggle-password" style="cursor:pointer;">👁</span>
+                </div>
+                
+                <p id="result" class="error-message"></p>
+                
+                <button id="loginBtn" class="btn btn-secondary">Se connecter</button>
+            </form>
+        </main>
+
+        <footer class="glass-footer">
+            <p>&copy; 2026 VitaSequor. Tous droits réservés.</p>
+        </footer>
+
+        <script src="../Controller/login.js"></script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VitaSequor - Page d'admin de département</title>
+        <link rel="stylesheet" href="../css/pages.css">
+    </head>
+    <body>
+        <aside class="sidebar">
+            <h2 class="sidebar-logo">VitaSequor</h2>
+            <ul class="sidebar-menu">
+                <li><a href="../View/adminDeptHome.html">Dashboard</a></li>
+                <li><a href="../View/personnel-adminDept.html">Gestion des médecins et secrétaires</a></li>
+                <li><a href="../View/patients-adminDept.html">Gestion des patients</a></li>
+                <li><a href="../View/factures-adminDept.html">Factures</a></li>
+                <li><a href="#" id="logoutBtn" style="color:var(--danger)">Déconnexion</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header class="topbar">
+                <h1 id="welcome_message"></h1>
+                <span id="dept"></span>
+                <span id="date" class="topbar-date"></span>
+            </header>
+
+            <section class="dashboard-cards">
+                <div class="card">
+                    <h3>Total des médecins</h3>
+                    <h1 id="totalDD">0</h1>
+                </div>
+                <div class="card">
+                    <h3>Total des secrétaires</h3>
+                    <h1 id="totalSD">0</h1>
+                </div>
+                <div class="card">
+                    <h3>Total des patients suivis</h3>
+                    <h1 id="totalPD">0</h1>
+                </div>
+                <div class="card">
+                    <h3>Revenus mensuels du département</h3>
+                    <h1 id="revenusDept">0</h1>
+                </div>
+                <div class="card">
+                    <h3>Total des factures en attente</h3>
+                    <h1 id="factureAttente">0</h1>
+                </div>
+            </section>
+        </main>
+        <script src="../Controller/common.js"></script>
+        <script src="../Controller/adminDeptHome.js"></script>
+    </body>
+</html>

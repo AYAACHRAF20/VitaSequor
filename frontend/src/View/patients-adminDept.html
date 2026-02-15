@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page des patients - Admin de département</title>
+        <link rel="stylesheet" href="../css/pages.css">
+    </head>
+    <body>
+        <aside class="sidebar">
+            <h2 class="sidebar-logo">VitaSequor</h2>
+            <ul class="sidebar-menu">
+                <li><a href="../View/adminDeptHome.html">Dashboard</a></li>
+                <li><a href="../View/personnel-adminDept.html">Gestion des médecins et secrétaires</a></li>
+                <li><a href="../View/patients-adminDept.html">Gestion des patients</a></li>
+                <li><a href="../View/factures-adminDept.html">Factures</a></li>
+                <li><a href="#" id="logoutBtn" style="color:var(--danger)">Déconnexion</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Liste des patients du département</h2>
+            </header>
+
+            <section class="general-section">
+                <div class="buttons">
+                    <button id="refreshPatients" class="btn btn-secondary" style="margin-bottom:10px">Rafraichir</button>
+                </div>
+                <table class="patientsTable">
+                    <thead>
+                        <tr>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>CIN</th>
+                            <th>Date de naissance</th>
+                            <th>Téléphone</th>
+                            <th>Adresse</th>
+                            <th>Genre</th>
+                            <th>Médecin(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientsList"></tbody>
+                </table>
+            </section>
+        </main>
+
+        <script src="../Controller/common.js"></script>
+        <script src="../Controller/patients-adminDept.js"></script>
+    </body>
+</html>

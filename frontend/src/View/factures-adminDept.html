@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factures du département</title>
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2 class="sidebar-logo">VitaSequor</h2>
+        <ul class="sidebar-menu">
+            <li><a href="../View/adminDeptHome.html">Dashboard</a></li>
+            <li><a href="../View/personnel-adminDept.html">Gestion du personnel</a></li>
+            <li><a href="../View/patients-adminDept.html">Gestion des patients</a></li>
+            <li><a href="../View/factures-adminDept.html">Factures</a></li>
+            <li><a href="#" id="logoutBtn" style="color:var(--danger)">Déconnexion</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <h2>Liste des factures du département</h2>
+        </header>
+
+        <section class="general-section">
+            <div class="buttons">
+                <input type="date" id="dateDebut" placeholder="Date début">
+                <input type="date" id="dateFin" placeholder="Date fin">
+                <select id="status">
+                    <option value="">Tous</option>
+                    <option value="PAYEE">Payée</option>
+                    <option value="EN_ATTENTE">En attente</option>
+                    <option value="ANNULEE">Annulée</option>
+                </select>
+                <select id="paymentMode">
+                    <option value="">Tous</option>
+                    <option value="ESPECES">Espèces</option>
+                    <option value="CARTE">Carte bancaire</option>
+                    <option value="VIREMENT">Virement</option>
+                    <option value="CHEQUE">Chèque</option>
+                </select>
+                <button class="btn btn-primary" id="filterBtn">Filtrer</button>
+            </div>
+            <table class="facturesTable">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Date</th>
+                        <th>Montant</th>
+                        <th>Statut</th>
+                        <th>Mode de paiement</th>
+                    </tr>
+                </thead>
+                <tbody id="facturesList"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../Controller/common.js"></script>
+    <script src="../Controller/factures-adminDept.js"></script>
+</body>
+</html>
