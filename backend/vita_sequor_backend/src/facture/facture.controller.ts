@@ -6,61 +6,51 @@ import { FactureStatus } from './entities/facture.entity';
 export class FactureController {
     constructor(private readonly factureService: FactureService) {}
 
-    // ======================================
-    // Revenus mensuels globaux
-    // ======================================
+    // REVENUS MENSUELS DE LA CLINIQUE 
     @Get('revenus')
     getMonthlyRevenus() {
         return this.factureService.calculMonthlyIncome();
     }
 
-    // ======================================
-    // Filtrer toutes les factures
-    // ======================================
+    // FILTRER TOUTES LES FACTURES
     @Post('selectAll')
     getFacturesFiltered(@Body() filters: any) {
         return this.factureService.getFacturesFiltered(filters);
     }
 
-    // ======================================
-    // Factures d’un département
-    // ======================================
+
+    // FACTURES D'UN DEPARTEMENT
     @Get('getDeptFactures/:deptId')
     getDeptFactures(@Param('deptId', ParseIntPipe) deptId: number) {
         return this.factureService.getDeptFactures(deptId);
     }
 
+    // RECUPERER LES FACTURES EN ATTENTE DU DEPARTEMENT
     @Get('getDeptFacturesAttente/:deptId')
     getDeptFacturesAttente(@Param('deptId', ParseIntPipe) deptId: number) {
-        // On pourrait créer une méthode dédiée si besoin
         return this.factureService.getDeptFacturesFiltered(deptId, { statut: FactureStatus.EN_ATTENTE });
     }
 
+    // RECUPERER LES FACTURES DU DEPARTEMENT 
     @Post('selectDeptFactures/:deptId')
-    selectDeptFactures(
-        @Param('deptId', ParseIntPipe) deptId: number,
-        @Body() filters: any
-    ) {
+    selectDeptFactures(@Param('deptId', ParseIntPipe) deptId: number, @Body() filters: any) {
         return this.factureService.getDeptFacturesFiltered(deptId, filters);
     }
 
+    // RECUPERER LES REVENUS MENSUELS D'UN CERTAIN DEPARTEMENT 
     @Get('getDeptMonthlyIncome/:deptId')
     getDeptMonthlyIncome(@Param('deptId', ParseIntPipe) deptId: number) {
-        // Si tu veux un calcul spécifique par département, il faut créer une méthode dédiée
-        return this.factureService.calculMonthlyIncome();
+        return this.factureService.getDeptMonthlyIncome(deptId);
     }
 
-    // ======================================
-    // Ajouter une facture
-    // ======================================
+
+    // AJOUTER UNE FACTURE
     @Post('addFacture')
     addFacture(@Body() data: any) {
         return this.factureService.addFacture(data);
     }
 
-    // ======================================
-    // Mettre à jour toutes les propriétés d’une facture
-    // ======================================
+    // MODIFIER UNE FACTURE
     @Put('updateFacture/:id')
     updateFacture(
         @Param('id', ParseIntPipe) id: number,
@@ -69,9 +59,8 @@ export class FactureController {
         return this.factureService.updateFacture(id, data);
     }
 
-    // ======================================
-    // Supprimer une facture
-    // ======================================
+
+    // SUPPRIMER UNE FACTURE
     @Delete('deleteFacture/:id')
     deleteFacture(@Param('id', ParseIntPipe) id: number) {
         return this.factureService.deleteFacture(id);
