@@ -16,20 +16,29 @@ export class FactureService {
 
 
     // CALCULER LES REVENUS MENSUELS DE LA CLINIQUE
-    async calculMonthlyIncome(){
-        const today=new Date();
-        const currentMonth=today.getMonth()+1;
-        const currentYear=today.getFullYear();
+    async calculMonthlyIncome() {
+        const today = new Date();
+        const currentMonth = today.getMonth();
+        const currentYear = today.getFullYear();
 
-        const factures=await this.factureRepo.find();
+        const factures = await this.factureRepo.find();
 
-        const total=factures.filter(facture=>{
-            const dateFacture=new Date(facture.date);
-            return(
-                dateFacture.getMonth()+1 === currentMonth && dateFacture.getFullYear() === currentYear
+        const total = factures
+            .filter(facture => {
+                if (!facture.date) return false;
+
+                const dateFacture = new Date(facture.date);
+                if (isNaN(dateFacture.getTime())) return false;
+
+                return (
+                    dateFacture.getMonth() === currentMonth &&
+                    dateFacture.getFullYear() === currentYear
+                );
+            })
+            .reduce(
+                (acc, facture) => acc + Number(facture.montant),
+                0
             );
-        })
-        .reduce((acc,facture)=>acc+facture.montant, 0);
 
         return total;
     }
